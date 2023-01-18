@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+ {% block content %}
+ <h1>O'chirish</h1>
+    <p>{{object.title}}ni o'chiraymi ?</p>
+    <form method="post">{% csrf_token %}
+        {{form|crispy}}
+        <button type="submit">O'chirish</button>
+    </form>
+ {% endblock content %}

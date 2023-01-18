@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Bosh sahifa{% endblock title %}
+{% block content %}
+    {% if user.is_authenticated %}
+        {{user.username }}!
+        <p>Xush kelibsiz </p><a href="{% url 'articlelist' %}">Postlar</a>
+        <p><a href="{% url 'logout' %}">Chiqib ketish</a></p>
+
+    {% else %}
+        <p>Saytga kirmagansz</p>
+        <a href="{% url 'login' %}">Saytga kirish</a>
+        <a href="{% url 'signup' %}">Ro'yxatdan o'tish</a>
+    {% endif %}
+{% endblock content %}
